@@ -31,7 +31,7 @@
     "ethereumjs-tx": "~2.1.2",
     "@rsksmart/rif-relay-client": "https://github.com/infuy/rif-relay-client#PP-108/collector-contract",
     "@rsksmart/rif-relay-common": "https://github.com/infuy/rif-relay-common",
-    "@rsksmart/rif-relay-contracts": "https://github.com/anarancio/rif-relay-contracts",
+    "@rsksmart/rif-relay-contracts": "https://github.com/anarancio/rif-relay-contracts#PP-108/collector-contract",
     "web3": "1.2.6",
     "web3-core": "1.2.6",
     "web3-eth": "1.2.6",
