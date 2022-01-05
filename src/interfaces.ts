@@ -58,6 +58,7 @@ export interface RelayingTransactionOptions {
     value?: number;
     onlyPreferredRelays?: boolean;
     tokenAddress: string;
+    collectorContract?: string;
 }
 
 export interface RelayGasEstimationOptions {

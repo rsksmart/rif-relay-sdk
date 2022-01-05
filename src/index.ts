@@ -71,6 +71,7 @@ interface RelayingServices {
      * @param smartWallet the smart wallet to be used for the relaying process
      * @param tokenAmount the Optional tokenAmount to pay for the relaying of the transaction. If not set the transaction
      * will be subsidized.
+     * @param collectorContract the contract to collect paid fees. If not set the worker will be payed.
      */
     relayTransaction(
         options: RelayingTransactionOptions
