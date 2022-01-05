@@ -342,7 +342,6 @@ export class DefaultRelayingServices implements RelayingServices {
                 {
                     from: this._getAccountAddress(),
                     to: tokenAddress,
-                    gas: 223000, // TODO: Hard-coded value to be reconsidered
                     value: value ? value.toString() : '0',
                     relayHub: this.contracts.addresses.relayHub,
                     callVerifier:
