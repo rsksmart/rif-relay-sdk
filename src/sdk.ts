@@ -350,9 +350,11 @@ export class DefaultRelayingServices implements RelayingServices {
                     data: unsignedTx.data,
                     tokenContract: tokenAddress,
                     collectorContract: collectorContract,
-                    tokenAmount: await this.web3Instance.utils.toWei(
-                        tokenAmount ? tokenAmount.toString() : '0'
-                    ),
+                    tokenAmount: [null, undefined].includes(tokenAmount)
+                    ? undefined
+                    : this.web3Instance.utils.toWei(
+                          tokenAmount.toString()
+                      ),
                     onlyPreferredRelays: onlyPreferredRelays ?? true,
                     tokenGas: '223000', // TODO: Hard-coded value to be reconsidered
                     ...transactionDetails
