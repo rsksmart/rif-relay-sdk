@@ -356,7 +356,6 @@ export class DefaultRelayingServices implements RelayingServices {
                           tokenAmount.toString()
                       ),
                     onlyPreferredRelays: onlyPreferredRelays ?? true,
-                    tokenGas: '223000', // TODO: Hard-coded value to be reconsidered
                     ...transactionDetails
                 }
             ]
