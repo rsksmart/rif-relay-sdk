@@ -29,9 +29,9 @@
   "dependencies": {
     "loglevel": "^1.8.0",
     "ethereumjs-tx": "~2.1.2",
-    "@rsksmart/rif-relay-client": "https://github.com/infuy/rif-relay-client#revenue-sharing-POC",
-    "@rsksmart/rif-relay-common": "https://github.com/infuy/rif-relay-common#revenue-sharing-POC",
-    "@rsksmart/rif-relay-contracts": "https://github.com/anarancio/rif-relay-contracts#revenue-sharing-POC",
+    "@rsksmart/rif-relay-client": "https://github.com/infuy/rif-relay-client#PP-94/revenue-sharing-model",
+    "@rsksmart/rif-relay-common": "https://github.com/infuy/rif-relay-common#PP-94/revenue-sharing-model",
+    "@rsksmart/rif-relay-contracts": "https://github.com/anarancio/rif-relay-contracts#PP-94/revenue-sharing-model",
     "web3": "1.2.6",
     "web3-core": "1.2.6",
     "web3-eth": "1.2.6",
