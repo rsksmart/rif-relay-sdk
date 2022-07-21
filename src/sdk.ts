@@ -7,7 +7,6 @@ import {
     Web3Provider
 } from '@rsksmart/rif-relay-common';
 import {
-    Address,
     RelayProvider,
     resolveConfiguration,
     RelayingResult
