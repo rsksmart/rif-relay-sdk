@@ -318,7 +318,8 @@ export class DefaultRelayingServices implements RelayingServices {
             transactionDetails,
             value,
             onlyPreferredRelays,
-            tokenAddress
+            tokenAddress,
+            collectorContract
         } = options;
 
         log.debug('Checking if the wallet exists');
@@ -347,9 +348,10 @@ export class DefaultRelayingServices implements RelayingServices {
                     callForwarder: address,
                     data: unsignedTx.data,
                     tokenContract: tokenAddress,
-                    tokenAmount: await this.web3Instance.utils.toWei(
-                        tokenAmount ? tokenAmount.toString() : '0'
-                    ),
+                    collectorContract: collectorContract,
+                    tokenAmount: [null, undefined].includes(tokenAmount)
+                        ? undefined
+                        : this.web3Instance.utils.toWei(tokenAmount.toString()),
                     onlyPreferredRelays: onlyPreferredRelays ?? true,
                     ...transactionDetails
                 }
