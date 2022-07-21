@@ -6,6 +6,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "scripts/build",
+    "prepare": "scripts/prepare",
     "dist": "scripts/dist",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
@@ -27,11 +28,12 @@
     ]
   },
   "dependencies": {
-    "@rsksmart/rif-relay-client": "0.0.2-alpha.4",
-    "@rsksmart/rif-relay-contracts": "0.0.2-alpha.4",
-    "@rsksmart/rif-relay-common": "0.0.2-alpha.5",
+    "@rsksmart/rif-relay-client": "https://github.com/rsksmart/rif-relay-client#feature/PP-45",
+    "@rsksmart/rif-relay-contracts": "https://github.com/rsksmart/rif-relay-contracts#feature/PP-45",
+    "@rsksmart/rif-relay-common": "https://github.com/rsksmart/rif-relay-common#feature/PP-45",
     "loglevel": "^1.8.0",
     "ethereumjs-tx": "~2.1.2",
+    "patch-package": "~6.4.6",
     "web3": "1.2.6",
     "web3-core": "1.2.6",
     "web3-eth": "1.2.6",
@@ -40,11 +42,10 @@
     "web3-utils": "1.2.6"
   },
   "devDependencies": {
+    "@openeth/truffle-typings": "0.0.6",
     "@types/jest": "^26.0.15",
     "@types/node": "^13.0.0",
     "@types/semver": "^7.3.4",
-    "@types/web3": "1.2.2",
-    "@types/web3-provider-engine": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "eslint": "^7.30.0",
