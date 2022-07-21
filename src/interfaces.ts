@@ -24,6 +24,7 @@ export interface SmartWalletDeploymentOptions {
     onlyPreferredRelays?: boolean;
     callVerifier?: string;
     callForwarder?: string;
+    transactionDetails?: Partial<EnvelopingTransactionDetails>;
 }
 
 export interface RelayingServicesConfiguration {

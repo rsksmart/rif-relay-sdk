@@ -6,8 +6,10 @@ import {
     TransactionConfig,
     TransactionReceipt
 } from 'web3-core';
+import { Transaction } from 'ethereumjs-tx';
 import { Web3MockConfiguration } from './mock';
 import { ZERO_ADDRESS } from '../src/constants';
+import { RelayingResult } from '../src';
 
 export const MOCK_TOKEN_ADDRESS = '0x0E569743F573323F430B6E14E5676EB0cCAd03D9';
 export const MOCK_SMART_WALLET_ADDRESS =
@@ -82,4 +84,11 @@ export const MOCK_TRANSACTION_RECEIPT: TransactionReceipt = {
         '0xfcf691fdfca9451aaed385c4be93212effff68bdb7a78c9e0c0c4676cdd55ccd',
     contractAddress: MOCK_CONTRACT_ADDRESS,
     logs: []
+};
+
+export const MOCK_RELAYING_RESULT: RelayingResult = {
+    transaction: new Transaction(),
+    receipt: MOCK_TRANSACTION_RECEIPT,
+    relayingErrors: new Map<string, Error>(),
+    pingErrors: new Map<string, Error>()
 };

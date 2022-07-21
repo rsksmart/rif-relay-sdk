@@ -3,6 +3,7 @@
  */
 import { TransactionReceipt } from 'web3-core';
 import { DefaultRelayingServices } from './sdk';
+import { PrefixedHexString } from 'ethereumjs-tx';
 import {
     RelayGasEstimationOptions,
     RelayingServicesAddresses,
@@ -11,7 +12,11 @@ import {
     SmartWallet,
     SmartWalletDeploymentOptions
 } from './interfaces';
-import { EnvelopingConfig } from '@rsksmart/rif-relay-common';
+import {
+    EnvelopingConfig,
+    EnvelopingTransactionDetails
+} from '@rsksmart/rif-relay-common';
+import { RelayingResult } from '@rsksmart/rif-relay-client';
 
 interface RelayingServices {
     /**
@@ -69,7 +74,7 @@ interface RelayingServices {
      */
     relayTransaction(
         options: RelayingTransactionOptions
-    ): Promise<TransactionReceipt>;
+    ): Promise<RelayingResult>;
 
     /**
      * It checks if the provided tokenAddress is allowed by the rif relay verifiers.
@@ -124,6 +129,19 @@ interface RelayingServices {
     estimateMaxPossibleRelayGasWithLinearFit(
         options: RelayGasEstimationOptions
     ): Promise<string>;
+
+    /**
+     * It looks for the transaction receipt of a transaction hash
+     *
+     * @param transactionHash transaction hash to look for the receipt
+     * @param retries amount of times that would retry for the receipt
+     * @param initialBackoff initial time to wait before each retry, this time would be double on each attemp
+     */
+    getTransactionReceipt(
+        transactionHash: PrefixedHexString,
+        retries?: number,
+        initialBackoff?: number
+    ): Promise<TransactionReceipt>;
 }
 
 export {
@@ -134,5 +152,8 @@ export {
     RelayingTransactionOptions,
     RelayGasEstimationOptions,
     SmartWalletDeploymentOptions,
-    RelayingServicesAddresses
+    RelayingServicesAddresses,
+    RelayingResult,
+    EnvelopingTransactionDetails,
+    EnvelopingConfig
 };

@@ -1,6 +1,6 @@
 import Web3 from 'web3';
 import { TransactionConfig } from 'web3-core';
-import { RelayingServices, SmartWallet } from '../src';
+import { RelayingResult, RelayingServices, SmartWallet } from '../src';
 import { RelayingTransactionOptions } from '../src/interfaces';
 import {
     MOCK_ACCOUNT,
@@ -8,7 +8,7 @@ import {
     MOCK_CONTRACT_ADDRESS,
     MOCK_SMART_WALLET_ADDRESS,
     MOCK_TOKEN_ADDRESS,
-    MOCK_TRANSACTION_HASH
+    MOCK_RELAYING_RESULT
 } from './constants';
 import { MockRelayingServices, Web3EthMock, Web3UtilsMock } from './mock';
 import Expect = jest.Expect;
@@ -150,12 +150,14 @@ describe('SDK not deployed tests', () => {
                 tokenAddress: MOCK_TOKEN_ADDRESS
             }
         );
+        const relayingResult: RelayingResult = MOCK_RELAYING_RESULT;
+        const txHash: string = relayingResult.transaction
+            .hash(true)
+            .toString('hex');
         expect(smartWallet.address).toBe(MOCK_SMART_WALLET_ADDRESS);
         expect(smartWallet.index).toBe(0);
         expect(smartWallet.deployment.tokenAddress).toBe(MOCK_TOKEN_ADDRESS);
-        expect(smartWallet.deployment.deployTransaction).toBe(
-            MOCK_TRANSACTION_HASH
-        );
+        expect(smartWallet.deployment.deployTransaction).toBe(txHash);
     });
 
     it('Should fail when relaying a Transaction', async () => {

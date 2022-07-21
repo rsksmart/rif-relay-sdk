@@ -1,4 +1,4 @@
-import { DefaultRelayingServices } from '../src';
+import { DefaultRelayingServices, RelayingResult } from '../src';
 import Web3 from 'web3';
 import {
     EnvelopingConfig,
@@ -12,8 +12,8 @@ import {
     EMPTY_CODE,
     MOCK_ADDRESS,
     MOCK_CODE,
+    MOCK_RELAYING_RESULT,
     MOCK_SMART_WALLET_ADDRESS,
-    MOCK_TRANSACTION_HASH,
     MOCK_TRANSACTION_RECEIPT
 } from './constants';
 import { Account, TransactionReceipt } from 'web3-core';
@@ -168,17 +168,17 @@ export class MockContracts extends Contracts {
 export class MockRelayProvider {
     deploySmartWallet(
         transactionDetails: EnvelopingTransactionDetails
-    ): Promise<string> {
+    ): Promise<RelayingResult> {
         console.debug('deploySmartWallet', {
             transactionDetails
         });
-        return Promise.resolve(MOCK_TRANSACTION_HASH);
+        return Promise.resolve(MOCK_RELAYING_RESULT);
     }
     async _ethSendTransaction() {
         console.debug('_ethSendTransaction');
         return {
             call: () => {
-                return MOCK_TRANSACTION_RECEIPT;
+                return MOCK_RELAYING_RESULT;
             }
         };
     }

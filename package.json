@@ -1,11 +1,12 @@
 {
   "name": "@rsksmart/rif-relay-sdk",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1-alpha.6",
   "description": "This project contains the SDK of the relaying services system.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "scripts/build",
+    "prepare": "scripts/prepare",
     "dist": "scripts/dist",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
@@ -31,6 +32,8 @@
     "@rsksmart/rif-relay-contracts": "https://github.com/rsksmart/rif-relay-contracts#feature/PP-45",
     "@rsksmart/rif-relay-common": "https://github.com/rsksmart/rif-relay-common#feature/PP-45",
     "loglevel": "^1.8.0",
+    "ethereumjs-tx": "~2.1.2",
+    "patch-package": "~6.4.6",
     "web3": "1.2.6",
     "web3-core": "1.2.6",
     "web3-eth": "1.2.6",
@@ -39,6 +42,7 @@
     "web3-utils": "1.2.6"
   },
   "devDependencies": {
+    "@openeth/truffle-typings": "0.0.6",
     "@types/jest": "^26.0.15",
     "@types/node": "^13.0.0",
     "@types/semver": "^7.3.4",
