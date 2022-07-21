@@ -142,6 +142,13 @@ interface RelayingServices {
         retries?: number,
         initialBackoff?: number
     ): Promise<TransactionReceipt>;
+
+    /**
+     * It validates if the smart wallet is deployed and belongs to the EOA
+     *
+     * @param address smart wallet address to validate
+     */
+    validateSmartWallet(address: string): Promise<SmartWallet>;
 }
 
 export {
